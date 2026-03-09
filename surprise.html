@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+}
+
+.container{
+max-width:600px;
+}
+
+h1{
+font-size:48px;
+}
+
+button{
+margin-top:30px;
+padding:12px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+#typed{
+margin-top:30px;
+font-size:22px;
+line-height:1.6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Birthday Mehveen</h1>
+
+<button onclick="startTyping()">Open Your Message</button>
+
+<p id="typed"></p>
+
+<button id="next" style="display:none;" onclick="window.location.href='surprise.html'">
+Unlock Surprise 🎁
+</button>
+
+</div>
+
+<script>
+
+let text = "You are one of the most special people in my life. I hope today makes you smile as much as you make me smile.";
+
+let i = 0;
+
+function startTyping(){
+
+let speed = 40;
+
+function type(){
+if(i < text.length){
+document.getElementById("typed").innerHTML += text.charAt(i);
+i++;
+setTimeout(type, speed);
+}else{
+document.getElementById("next").style.display="inline-block";
+}
+}
+
+type();
+
+}
+
+</script>
+
+</body>
+</html>
