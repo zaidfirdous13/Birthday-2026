@@ -3,7 +3,17 @@
 <head>
 <title>Happy Birthday ❤️</title>
 
-<style>
+.heart{
+position:fixed;
+color:#ff2e6a;
+font-size:20px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(100vh);}
+}<style>
 
 body{
 margin:0;
@@ -43,9 +53,26 @@ margin-top:40px;
 
 </head>
 
-<body>
+<script>
 
-<h1>Happy Birthday ❤️</h1>
+function createHeart(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(10+Math.random()*30)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+}
+
+setInterval(createHeart,400);
+
+</script><body>
+
+<h1>Happy Birthday Mehveen ❤️</h1>
 
 <p>
 To the most amazing girl in my life.
@@ -56,7 +83,7 @@ You make every day better just by being in it.
 
 <div id="message">
 You are the best thing that ever happened to me.
-I hope your birthday is as beautiful as you are.
+I hope your birthday is as beautiful as you are my baby girl.
 </div>
 
 <script>
